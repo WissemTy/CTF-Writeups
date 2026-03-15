@@ -66,7 +66,7 @@ if (file_exists($file)) {
 $data = unserialize(getCookie("flans"));
 ```
 
-> *La sérialisation transforme un objet PHP en texte pour le stocker (ici dans un cookie). Puisque le cookie est côté client, on peut le modifier. Lors de l'unserialize(), PHP reconstruit l'objet. Si on injecte un objet malveillant, on peut déclencher des comportements imprévus ou manipuler les propriétés de l'application. [Serialisation php vulnerability](https://portswigger.net/web-security/deserialization/exploiting)
+> *La sérialisation transforme un objet PHP en texte pour le stocker (ici dans un cookie). Puisque le cookie est côté client, on peut le modifier. Lors de l'unserialize(), PHP reconstruit l'objet. Si on injecte un objet malveillant, on peut déclencher des comportements imprévus ou manipuler les propriétés de l'application. [Serialisation php vulnerability](https://portswigger.net/web-security/deserialization/exploiting)*
 
 ## Exploitation
 
@@ -90,7 +90,7 @@ On pourrait forger un cookie qui contient un Baker à la place d'un Flan. Ainsi 
 
 ![Interface DevTools](devtools.png "Vue de la page d'accueil")
 
-Si on regarde ce cookie dans cyber chef CyberChef [Decodage](https://gchq.github.io/CyberChef/#recipe=URL_Decode(true)PHP_Deserialize(true/disabled)&input=YSUzQTElM0ElN0JzJTNBNSUzQSUyMmZsYW5zJTIyJTNCYSUzQTMlM0ElN0JpJTNBMCUzQk8lM0E0JTNBJTIyRmxhbiUyMiUzQTQlM0ElN0JzJTNBNyUzQSUyMiUwMCUyQSUwMG5hbWUlMjIlM0JzJTNBNCUzQSUyMnRlc3QlMjIlM0JzJTNBNyUzQSUyMiUwMCUyQSUwMHNpemUlMjIlM0JpJTNBOSUzQnMlM0E5JTNBJTIyJTAwJTJBJTAwd2VpZ2h0JTIyJTNCaSUzQTIlM0JzJTNBMTMlM0ElMjIlMDAlMkElMDBzdHVyZGluZXNzJTIyJTNCaSUzQTUlM0IlN0RpJTNBMSUzQk8lM0E0JTNBJTIyRmxhbiUyMiUzQTQlM0ElN0JzJTNBNyUzQSUyMiUwMCUyQSUwMG5hbWUlMjIlM0JzJTNBNSUzQSUyMnRlc3QyJTIyJTNCcyUzQTclM0ElMjIlMDAlMkElMDBzaXplJTIyJTNCaSUzQTglM0JzJTNBOSUzQSUyMiUwMCUyQSUwMHdlaWdodCUyMiUzQmklM0EyJTNCcyUzQTEzJTNBJTIyJTAwJTJBJTAwc3R1cmRpbmVzcyUyMiUzQmklM0E0JTNCJTdEaSUzQTIlM0JPJTNBNCUzQSUyMkZsYW4lMjIlM0E0JTNBJTdCcyUzQTclM0ElMjIlMDAlMkElMDBuYW1lJTIyJTNCcyUzQTUlM0ElMjJ0ZXN0MyUyMiUzQnMlM0E3JTNBJTIyJTAwJTJBJTAwc2l6ZSUyMiUzQmklM0EyJTNCcyUzQTklM0ElMjIlMDAlMkElMDB3ZWlnaHQlMjIlM0JpJTNBNSUzQnMlM0ExMyUzQSUyMiUwMCUyQSUwMHN0dXJkaW5lc3MlMjIlM0JpJTNBMiUzQiU3RCU3RCU3RA&ieol=CRLF&oeol=CRLF), on obtient :
+Si on regarde ce cookie dans cyber chef CyberChef ([Decodage](https://gchq.github.io/CyberChef/#recipe=URL_Decode(true)PHP_Deserialize(true/disabled)&input=YSUzQTElM0ElN0JzJTNBNSUzQSUyMmZsYW5zJTIyJTNCYSUzQTMlM0ElN0JpJTNBMCUzQk8lM0E0JTNBJTIyRmxhbiUyMiUzQTQlM0ElN0JzJTNBNyUzQSUyMiUwMCUyQSUwMG5hbWUlMjIlM0JzJTNBNCUzQSUyMnRlc3QlMjIlM0JzJTNBNyUzQSUyMiUwMCUyQSUwMHNpemUlMjIlM0JpJTNBOSUzQnMlM0E5JTNBJTIyJTAwJTJBJTAwd2VpZ2h0JTIyJTNCaSUzQTIlM0JzJTNBMTMlM0ElMjIlMDAlMkElMDBzdHVyZGluZXNzJTIyJTNCaSUzQTUlM0IlN0RpJTNBMSUzQk8lM0E0JTNBJTIyRmxhbiUyMiUzQTQlM0ElN0JzJTNBNyUzQSUyMiUwMCUyQSUwMG5hbWUlMjIlM0JzJTNBNSUzQSUyMnRlc3QyJTIyJTNCcyUzQTclM0ElMjIlMDAlMkElMDBzaXplJTIyJTNCaSUzQTglM0JzJTNBOSUzQSUyMiUwMCUyQSUwMHdlaWdodCUyMiUzQmklM0EyJTNCcyUzQTEzJTNBJTIyJTAwJTJBJTAwc3R1cmRpbmVzcyUyMiUzQmklM0E0JTNCJTdEaSUzQTIlM0JPJTNBNCUzQSUyMkZsYW4lMjIlM0E0JTNBJTdCcyUzQTclM0ElMjIlMDAlMkElMDBuYW1lJTIyJTNCcyUzQTUlM0ElMjJ0ZXN0MyUyMiUzQnMlM0E3JTNBJTIyJTAwJTJBJTAwc2l6ZSUyMiUzQmklM0EyJTNCcyUzQTklM0ElMjIlMDAlMkElMDB3ZWlnaHQlMjIlM0JpJTNBNSUzQnMlM0ExMyUzQSUyMiUwMCUyQSUwMHN0dXJkaW5lc3MlMjIlM0JpJTNBMiUzQiU3RCU3RCU3RA&ieol=CRLF&oeol=CRLF)), on obtient :
 
 ```php
 a:1:{
