@@ -2,7 +2,7 @@
 
 - **Catégorie :** Pwn
 
-- **Description :** Something watches over you in this place. Every step, every decision — recorded, verified. It knows where you've been. It knows where you're going. It cannot be fooled. ...probably. [`Revenant.zip`](Revenant.zip) \
+- **Description :** Something watches over you in this place. Every step, every decision — recorded, verified. It knows where you've been. It knows where you're going. It cannot be fooled. ...probably. [`Revenant.zip`](Revenant.zip)
 
 - **Résumé de la chaîne d'attaque :** Stack Buffer Overflow & Shadow Stack Bypass via Pointer Overflow.
 
@@ -78,15 +78,15 @@ La 513ème entrée (index 512) de la Shadow Stack se superpose exactement avec l
 
 ### 3. Empoisonnement du pointeur
 
-En utilisant l'option [4] Die and restart, le programme appelle play() de manière récursive.
+En utilisant l'option `[4] Die and restart`, le programme appelle `play()` de manière récursive.
 
 1. On effectue 511 resets.
 
 2. Au 512ème appel, le pointeur de la Shadow Stack pointe sur username.
 
-2. On utilise l'option [3] Change callsign pour écrire l'adresse de win() dans username.
+2. On utilise l'option `[3] Change callsign` pour écrire l'adresse de `win()` dans username.
 
-4. Désormais, la Shadow Stack "croit" que l'adresse de retour légitime est win().
+4. Désormais, la Shadow Stack "croit" que l'adresse de retour légitime est `win()`.
 
 ###  4. Déclenchement du Buffer Overflow
 L'analyse de l'assembleur de la fonction `play()` permet de déterminer la distance entre le début du buffer et l'adresse de retour. L'instruction suivante est : `lea -0x30(%rbp), %rax`
