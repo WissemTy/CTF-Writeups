@@ -2,11 +2,25 @@
 
 This repository will host my write-ups and solutions for the **Midnight Flag CTF 2026**.
 
-### Event Details
-* **Start:** Friday, March 13, 2026 - 20:00 UTC
-* **End:** Sunday, March 15, 2026 - 20:00 UTC
-* **Official Website:** [ctf.midnightflag.fr](https://ctf.midnightflag.fr/)
-* **CTFTime:** [Event Details](https://ctftime.org/event/3105)
+## 🏆 Performance & Ranking
 
-### Write-ups
-I will publish detailed write-ups in English for the challenges I complete shortly after the competition ends.
+* **Ranking:** 297th / 757 participants (**Top 40%**)
+* **Result:** [Event Scoreboard](https://ctftime.org/team/427709) (Solo)
+* **Status:** First participation (Beginner)
+
+*My focus for this event was on learning, technical research, and producing detailed documentation to track my personal progress in cybersecurity.*
+
+## 📅 Event Details
+* **Date:** March 13 – 15, 2026
+* **Official Website:** [ctf.midnightflag.fr](https://ctf.midnightflag.fr/)
+* **CTFTime:** [Event Link](https://ctftime.org/event/3105)
+
+## 📑 Analysis & Solutions
+
+| Challenge | Category | Write-up |
+| :--- | :--- | :--- |
+| **Duke's DBar** | Forensics | [📄 View Analysis](Forensics/Duke's%20DBar/README.md) |
+| **Post-Mortem Artifacts** | Forensics | [📄 View Analysis](Forensics/Post-Mortem%20Artifacts/README.md) |
+| **Revenant** | Pwn | [📄 View Analysis](Pwn/Revenant/README.md) |
+| **67** | Reverse | [📄 View Analysis](Reverse/67/README.md) |
+| **Clash Of Flans** | Web | [📄 View Analysis](Web/Clash%20Of%20Flans/README.md) |
