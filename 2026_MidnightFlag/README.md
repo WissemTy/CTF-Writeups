@@ -7,6 +7,7 @@ This repository will host my write-ups and solutions for the **Midnight Flag CTF
 * **Ranking:** 297th / 757 participants (**Top 40%**)
 * **Result:** [Event Scoreboard](https://ctftime.org/team/427709) (Solo)
 * **Status:** First participation (Beginner)
+* **Certificate:** [Participation Certificate](Certificate_MidnightFlag_2026_Lititz.pdf)
 
 *My focus for this event was on learning, technical research, and producing detailed documentation to track my personal progress in cybersecurity.*
 
